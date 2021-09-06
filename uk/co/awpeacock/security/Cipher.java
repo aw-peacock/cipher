@@ -77,7 +77,7 @@ public class Cipher
         // specific, helpful message
         if ( original.length() == 0 )
         {
-            LOGGER.log(Level.WARNING, "Attempt to use encode() with an empty string");
+            LOGGER.log(Level.FINE, "Attempt to use encode() with an empty string");
             throw new SecurityException("Empty string passed in to encode");
         }
 
@@ -91,8 +91,8 @@ public class Cipher
         Matcher matcher = pattern.matcher(upper);
         if ( !matcher.find() )
         {
-            LOGGER.log(Level.WARNING, "Attempt to use encode() with an invalid string - " + original);
-            throw new SecurityException("Invalid string passed in to encode - " + original);
+            LOGGER.log(Level.FINE, "Attempt to use encode() with an invalid string - " + original);
+            throw new SecurityException("Invalid string passed in to encode");
         }
 
         StringBuilder encoded = new StringBuilder();
@@ -151,7 +151,7 @@ public class Cipher
         // specific, helpful message
         if ( original.length() == 0 )
         {
-            LOGGER.log(Level.WARNING, "Attempt to use decode() with an empty string");
+            LOGGER.log(Level.FINE, "Attempt to use decode() with an empty string");
             throw new SecurityException("Empty string passed in to decode");
         }
 
@@ -165,8 +165,8 @@ public class Cipher
         Matcher matcher = pattern.matcher(upper);
         if ( !matcher.find() )
         {
-            LOGGER.log(Level.WARNING, "Attempt to use decode() with an invalid string - " + original);
-            throw new SecurityException("Invalid string passed in to decode - " + original);
+            LOGGER.log(Level.FINE, "Attempt to use decode() with an invalid string - " + original);
+            throw new SecurityException("Invalid string passed in to decode");
         }
 
         StringBuilder decoded = new StringBuilder();
